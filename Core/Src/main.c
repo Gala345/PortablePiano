@@ -61,8 +61,7 @@ static void MX_TIM3_Init(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
-//bblb test
-//wbwb test
+//by gala
 void Buzzer_SetFreq(uint16_t freq , TIM_HandleTypeDef *htim) 
 {
     if (freq == 0) {
