@@ -1,0 +1,71 @@
+# ============================================================
+# STM32CubeMX + Keil MDK-ARM 工程忽略规则
+# 工程：stmlearn3 / STM32F411CEUx / STM32Cube FW_F4 V1.28.3
+# 依据：MDK-ARM/stmlearn3.uvprojx 的 IncludePath 仅包含
+#   ../Drivers/STM32F4xx_HAL_Driver/Inc
+#   ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy
+#   ../Drivers/CMSIS/Device/ST/STM32F4xx/Include
+#   ../Drivers/CMSIS/Include
+# 被忽略的厂商文件未参与编译，重新生成代码即可恢复。
+# ============================================================
+
+# ---------- Keil MDK-ARM 构建产物 ----------
+# OutputDirectory = stmlearn3\
+MDK-ARM/stmlearn3/
+# 汇编列表文件
+MDK-ARM/*.lst
+*.o
+*.d
+*.crf
+*.dep
+*.lnp
+*.axf
+*.elf
+*.hex
+*.bin
+*.map
+*.lst
+*.iex
+*.sct
+*.htm
+*.build_log.htm
+*.bak
+*.i
+*.obj
+
+# ---------- Keil 用户私有设置（窗口布局、断点、调试器选择） ----------
+*.uvguix.*
+*.uvoptx
+*.uvproj.bak
+*.dbgconf
+
+# ---------- 调试器日志 ----------
+JLinkLog.txt
+JLinkSettings.ini
+*.log
+
+# ---------- CubeMX 生成但本工程未引用的厂商文件 ----------
+# DSP 源码与示例，工程未启用
+Drivers/CMSIS/DSP/
+# 神经网络库，未使用
+Drivers/CMSIS/NN/
+# 未使用
+Drivers/CMSIS/RTOS/
+# 未使用
+Drivers/CMSIS/RTOS2/
+# Cortex-A 内核头文件，本工程为 Cortex-M4
+Drivers/CMSIS/Core_A/
+# 与 CMSIS/Include 内容重复（各 30 个文件），工程引用的是后者
+Drivers/CMSIS/Core/
+# CMSIS-DAP 调试器固件源码，与固件编译无关
+Drivers/CMSIS/DAP/
+Drivers/CMSIS/Documentation/
+
+# ---------- 操作系统 / 编辑器 ----------
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
+*.swp
+*~
